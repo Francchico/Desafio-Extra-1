@@ -12,20 +12,22 @@ interface SideBarProps {
 }
 
 export function SideBar({genero, genID, handleClick}: SideBarProps) {
-  <nav className="sidebar">
-    <span>Watch<p>Me</p></span>
+  return(
+    <nav className="sidebar">
+      <span>Watch<p>Me</p></span>
 
-    <div className="buttons-container">
-      {genero.map(genre => (
-        <Button
-          key={String(genre.id)}
-          title={genre.title}
-          iconName={genre.name}
-          onClick={() => handleClick(genre.id)}
-          selected={genID === genre.id}
-        />
-      ))}
-    </div>
+      <div className="buttons-container">
+        {genero.map(genre => (
+          <Button
+            key={String(genre.id)}
+            title={genre.title}
+            iconName={genre.name}
+            onClick={() => handleClick(genre.id)}
+            selected={genID === genre.id}
+          />
+        ))}
+      </div>
 
-  </nav>
+</nav>
+  )
 }
