@@ -1,16 +1,18 @@
 import { MovieCard } from "./MovieCard";
+
+interface ContentFilmes {
+  imdbID: string;
+  Title: string;
+  Poster: string;
+  Ratings: Array<{
+    Source: string;
+    Value: string;  
+  }>;
+  Runtime: string;
+}
 interface ContentProps {
   tituloGenero: string;
-  filmes: Array<{
-    imdbID: string;
-    Title: string;
-    Poster: string;
-    Ratings: Array<{
-      Source: string;
-      Value: string;
-    }>;
-    Runtime: string;
-  }>;
+  filmes: ContentFilmes[]; 
 }
 
 export function Content({ tituloGenero, filmes }: ContentProps) {
